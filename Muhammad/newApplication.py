@@ -4,8 +4,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "Hello, world!!!!YAY!! STOP BEING SO COMP-SCI "
+    return render_template("indexMF.html")
 
-@app.route("/Brit")
-def Brit():
-    return "Hello Dona"
+@app.route("/<string:name>")
+def hello(names):
+    return "Hello, {names}!"
+
